@@ -1,0 +1,15 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li *ngIf="activeSession"><a routerLink="/admin">Usuarios</a></li>
+            <li *ngIf="activeSession"><a routerLink="/aeropuertos">Aeropuertos</a></li>
+            <li *ngIf="activeSession"><a routerLink="/rutas">Rutas</a></li>
+            <li *ngIf="activeSession"><a routerLink="/vuelos">Vuelos</a></li>
+            <!-- Sesion -->
+            <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarse</a></li>
+            <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+            <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
+        </ul>
+    </div>
+</nav>
