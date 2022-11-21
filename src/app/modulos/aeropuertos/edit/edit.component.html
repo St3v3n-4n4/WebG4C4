@@ -1,1 +1,53 @@
-<p>edit Aeropuertos works!</p>
+<div class="container">
+    <h3 class="center-align">Editar Aeropuerto</h3>
+  
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="edit()">
+      <input formControlName="id" type="hidden" class="validate">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="nombre" type="text" class="validate">
+          <label class="active" for="nombre">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="ciudad" type="text" class="validate">
+          <label class="active" for="ciudad">Apellidos</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="pais" type="text" class="validate">
+          <label class="active" for="pais">Pais</label>
+        </div>
+        <div class="input-field col s6">
+            <input formControlName="sigla" type="text" class="validate">
+            <label class="active" for="sigla">Sigla</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="coordenada_X" type="text" class="validate">
+          <label class="active" for="coordenada_X">coordenada_X</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="coordenada_Y" type="text" class="validate">
+          <label class="active" for="coordenada_Y">coordenada_Y</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <select formControlName="tipo" class="browser-default">
+            <option value="" disabled selected>Seleccione el Tipo</option>
+            <option value="Nacional">Nacional</option>
+            <option value="Internacional">Internacional</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row center-align">
+        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
+  

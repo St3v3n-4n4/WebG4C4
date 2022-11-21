@@ -1,1 +1,32 @@
-<p>get Usuarios works!</p>
+<div class="container">
+    <br>
+    <a routerLink="/admin/create" class="btn">Registrar Persona</a>
+
+    <table class="table responsive">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of listado">
+                <td>{{p.nombre}}</td>
+                <td>{{p.apellidos}}</td>
+                <td>{{p.correo}}</td>
+                <td>{{p.telefono}}</td>
+                <td>
+                    <a routerLink="/admin/edit/{{p.id}}" class="btn">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <button class="btn red" (click)="delete(p.id)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+        </tbody>
+    </table>
+</div>

@@ -1,59 +1,35 @@
-<div class="row">
-    <div class="col s12 l4 offset-l4">
-        <div class="card grey lighten-3">
-            <div class="card-content">
-                <h4 class="card-title center-align">Creación de Usuarios</h4>
-                <form>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="id" type="text"/>
-                            <label for="id">Identificación</label>
-                            <div class="mensajeValidacion">
-                                <strong>Este campo es requerido.</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="nombre" type="text" class="validate">
-                            <label for="nombre">Nombre</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="apellidos" type="text" class="validate">
-                            <label for="apellidos">Apellidos</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="telefono" type="text" class="validate">
-                            <label for="telefono">Teléfono</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input formControlName="correo" type="email" id="email" class="validate" />
-                            <label for="email">Correo Electrónico</label>
-                            <div class="mensajeValidacion">
-                                <strong>Este campo es requerido.</strong>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">vpn_key</i>
-                            <input formControlName="clave" type="password" id="password" class="validate" />
-                            <label for="email">Contraseña</label>
-                            <div class="mensajeValidacion">
-                                <strong>Este campo es requerido.</strong>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="row center-align">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Crear
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                </form>
+<div class="container">
+    <h3 class="center-align">Registrar Usuario</h3>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+        <div class="row">
+            <div class="input-field col s6">
+                <input formControlName="nombre" type="text" class="validate">
+                <label for="nombre">Nombre</label>
+            </div>
+            <div class="input-field col s6">
+                <input formControlName="apellidos" type="text" class="validate">
+                <label for="apellidos">Apellidos</label>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="telefono" type="text" class="validate">
+                <label for="telefono">Telefono</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="correo" type="email" class="validate">
+                <label for="correo">Correo</label>
+                <span class="helper-text" data-error="Correo invalido" data-success="right">Estado</span>
+            </div>
+        </div>
+
+        <div class="row center-align">
+            <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit"
+                name="action">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
 </div>

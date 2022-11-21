@@ -24,7 +24,8 @@ export class VueloService {
       fecha_fin: vuelo.fecha_fin,
       hora_fin: vuelo.hora_fin,
       asientos_vendidos: vuelo.asientos_vendidos,
-      nombre_piloto: vuelo.nombre_piloto
+      nombre_piloto: vuelo.nombre_piloto,
+      rutaId: vuelo.rutaId
     });
   }
 

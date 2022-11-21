@@ -1,1 +1,50 @@
-<p>create Vuelos works!</p>
+<div class="container">
+    <h3 class="center-align">Registrar Vuelo</h3>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+      <div class="row">
+        <div class="input-field col s6">
+            <select class="browser-default" formControlName="rutaId">
+                <option value="" disabled selected>Seleccione la Ruta</option>
+                <option *ngFor="let ruta of listadoRutas" value="{{ruta.origenId}} - {{ruta.destinoId}}">
+                    {{ruta.origenId}} - {{ruta.destinoId}}</option>
+            </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="fecha_inicio" type="date" class="validate">
+          <label for="fecha_inicio">Fecha Inicio</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="hora_inicio" type="time" class="validate">
+          <label class="active" for="hora_inicio">Hora Inicio</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="fecha_fin" type="date" class="validate">
+          <label for="fecha_fin">Fecha Fin</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="hora_fin" type="time" class="validate">
+          <label class="active" for="hora_fin">Hora Fin</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="asientos_vendidos" type="number" class="validate">
+          <label class="active" for="asientos_vendidos">Asientos Vendidos</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="nombre_piloto" type="text" class="validate">
+          <label for="nombre_piloto">Nombre del Piloto</label>
+        </div>
+      </div>
+  
+      <div class="row center-align">
+        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>

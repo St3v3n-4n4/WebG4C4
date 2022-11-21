@@ -7,4 +7,5 @@ export class AeropuertoModelo {
     coordenada_Y?: string;
     sigla?: string;
     tipo?:string;
+    token?: string;
 }

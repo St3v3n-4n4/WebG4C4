@@ -1,1 +1,34 @@
-<p>create Rutas works!</p>
+<div class="container">
+    <h3 class="center-align">Registrar Ruta</h3>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+        <div class="row">
+            <div class="input-field col s6">
+                <select class="browser-default" formControlName="origenId">
+                    <option value="" disabled selected>Seleccione el Aeropuerto Origen</option>
+                    <option *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">
+                        {{aeropuerto.nombre}}</option>
+                </select>
+            </div>
+            <div class="input-field col s6">
+                <select class="browser-default" formControlName="destinoId">
+                    <option value="" disabled selected>Seleccione el Aeropuerto Destino</option>
+                    <option *ngFor="let aeropuerto of listadoAeropuertos" value="{{aeropuerto.nombre}}">
+                        {{aeropuerto.nombre}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input formControlName="tiempo_estimado" type="number" class="validate">
+                <label class="active" for="tiempo_estimado">Tiempo Estimado</label>
+            </div>
+        </div>
+
+        <div class="row center-align">
+            <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit"
+                name="action">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>

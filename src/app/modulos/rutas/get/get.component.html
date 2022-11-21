@@ -1,1 +1,31 @@
-<p>get Rutas works!</p>
+<div class="container">
+    <br>
+    <a routerLink="/rutas/create" class="btn">Registrar Ruta</a>
+
+    <table class="table responsive">
+        <thead>
+            <tr>
+                <th>Aeropuerto Origen</th>
+                <th>Aeropuerto Destino</th>
+                <th>Tiempo estimado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of listado">
+                <td>{{p.origenId}}</td>
+                <td>{{p.destinoId}}</td>
+                <td>{{p.tiempo_estimado}}</td>
+                <td>
+                    <a routerLink="/rutas/edit/{{p.id}}" class="btn">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <button class="btn red" (click)="delete(p.id)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

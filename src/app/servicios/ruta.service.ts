@@ -20,7 +20,9 @@ export class RutaService {
 
   store(ruta: RutaModelo): Observable<RutaModelo> {
     return this.http.post<RutaModelo>(`${this.url}/rutas`, {
-      tiempo_estimado: ruta.tiempo_estimado
+      tiempo_estimado: ruta.tiempo_estimado,
+      origenId: ruta.origenId,
+      destinoId: ruta.destinoId
     });
   }
 

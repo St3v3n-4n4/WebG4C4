@@ -24,7 +24,8 @@ export class UsuarioService {
       nombre: usuario.nombre,
       apellidos: usuario.apellidos,
       telefono: usuario.telefono,
-      correo: usuario.correo
+      correo: usuario.correo,
+      password: ''
     });
   }
 
